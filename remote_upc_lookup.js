@@ -14,12 +14,12 @@ exports.lookup = function (input_upc_code, callback) {
   } else {
     client.get(upc_url + upc_api_key + "/" + upc_code, function upcdatabase_org_response(data, response){
       if (data.valid == 'true') {
-        console.log(data);
         // return the idem details. If there is an "itemname" (short),
         // return that, otherwise return the (long) description
-        return callback(null, data.number, (data.itemname) ? data.itemname : data.description);
+        return callback(null, upc_code, (data.itemname) ? data.itemname : data.description);
       } else {
-        return null
+        // the data is not valid. Return an error message
+        return callback(new Error(data.reason));
       }
     })
   }

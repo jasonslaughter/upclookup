@@ -8,7 +8,7 @@ function sanitize_upc(input_upc_code) {
   // i.e., 11-13 numbers
   upc_code = input_upc_code.toString().match(/^[0-9]{8,13}$/);
   if (!upc_code) { 
-    return null 
+    return null;
   } else { 
     return upc_code[0];
   }

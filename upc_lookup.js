@@ -24,10 +24,10 @@ scanner.on("data", function(code){
 });
 
 function lookup_upc(upc_code) {
-  console.log("Looking up UPC code "+upc_code+" ...\n");
+  // console.log("Looking up UPC code "+upc_code+" ...\n");
   remote_upc.lookup(upc_code, function display_upc_code(err, upc_code, description) {
     if (err) {
-      console.log(err.toString())
+      //console.log(err.toString())
     } else {
       console.log(description);
     }
