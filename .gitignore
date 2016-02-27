@@ -42,3 +42,4 @@ config.js
 config.json
 # node modules don't need to be on git
 node_modules
+build
